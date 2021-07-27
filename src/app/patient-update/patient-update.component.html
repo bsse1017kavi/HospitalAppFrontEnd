@@ -1,0 +1,34 @@
+<mat-card style="margin-left: 240px; margin-right: 240px">
+  <div class="row">
+      <div class="col-sm-4 offset-sm-4">
+          <form class="form" [formGroup]="patientService.formModel" autocomplete="off" (submit)="updatePatient()">
+              <div class="form-group required">
+                  <label>Patient Id: {{patientService.patientForUpdate.id}}</label>
+                  <br>
+                  <label>Patient Name</label>
+                  <input type="text" class="form-control" [(ngModel)]="patientService.patientForUpdate.name" formControlName="PatientName" value="patientService.patientForUpdate.name">
+              </div>
+  
+              <div>
+                  <div class="form-group required">
+                      <label>Age</label>
+                      <input type="number" class="form-control" [(ngModel)]="patientService.patientForUpdate.age" formControlName="Age" value="patientService.patientForUpdate.age">
+                  </div>
+                  <div class="form-group required">
+                      <label>Diagnosis</label>
+                      <input type="text" class="form-control" [(ngModel)]="patientService.patientForUpdate.diagnosis" formControlName="Diagnosis" value="patientService.patientForUpdate.diagnosis">
+                  </div>
+              </div>
+              <br>
+              <div class="form-row">
+                  <div class="form-group col-md-6 offset-md-3">
+                      <button type="submit" class="btn btn-lg btn-block" >Update Patient</button>
+                      <br>
+                  </div>
+                  
+              </div>
+
+          </form>
+      </div>
+  </div>
+</mat-card>

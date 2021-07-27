@@ -1,0 +1,22 @@
+<!-- <p>
+  top-bar works!
+</p> -->
+
+<mat-toolbar class="mat-elevation-z6">
+  <span>
+      Hospital Management 
+  </span>
+
+  <div class="spacer"></div>
+
+  <nav>
+    <a mat-button routerLink='/' >Home</a>
+    <!-- <a mat-button routerLink='/doctor' >Doctor</a> -->
+    <a mat-button routerLink='/registration' *ngIf="!check()">Sign Up</a>
+    <a mat-button routerLink='/log-in' *ngIf="!check()">Log In</a>
+    <a mat-button routerLink='/medicine' *ngIf="check()" >Medicine</a>
+    <a mat-button routerLink='/patient' *ngIf="check()" >Patient</a>
+    <a mat-button *ngIf="check()" (click)="signOut()" >Sign Out</a>
+  </nav>
+
+</mat-toolbar>

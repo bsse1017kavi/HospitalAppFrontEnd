@@ -1,0 +1,21 @@
+.spacer{
+    flex: 1 1 auto ;
+}
+
+.mat-toolbar {
+    background: deepskyblue;
+    color: black
+ }
+
+ .top-bar-style{
+     position: fixed;
+ }
+
+ .top-bar-style2{
+    position: absolute;
+}
+
+a
+{
+    color: black
+}

@@ -1,0 +1,54 @@
+<mat-card style="margin-right: 60px; margin-left:60px; margin-top: 60px" id="contentToConvert">
+  <div>
+      <div class="row">
+          <div class="col-sm-11" style="float:left">
+              <div >
+                  <p> Id: {{patient.id}} </p>
+                  <p> Name: {{patient.name}} </p>
+                  <p> Age: {{patient.age}} </p>
+                  <p> Diagnosis: {{patient.diagnosis}} </p>
+              </div>
+
+              <p><b>Medicines:</b></p>
+
+              <div *ngFor="let medicine of medicines">
+                {{medicine.name}}, {{medicine.usage}}
+              </div>
+    
+          </div>
+          
+      </div>
+
+  </div>
+</mat-card>
+
+<br>
+
+<div *ngFor="let medicine of addableMedicines">
+  <mat-card style="margin-right: 60px; margin-left:60px;">
+      <div>
+          <div class="row">
+              <div class="col-sm-11" style="float:left">
+                  <div >
+                      <p> Id: {{medicine.id}} </p>
+                      <p> Name: {{medicine.name}} </p>
+                      <p> Indication: {{medicine.indication}} </p>
+                      <p> Usage: {{medicine.usage}} </p>
+                      <p> Instruction: {{medicine.instruction}} </p>
+                  </div>
+        
+              </div>
+
+              <div class="col-sm-1">
+                <button mat-button (click)="addMedicineToPrescription(medicine)" > Add </button>
+                <button mat-button style="margin-top:10px" (click)="deleteMedicineFromPrescription(medicine)"> Delete </button>
+              </div>
+              
+          </div>
+    
+      </div>
+  </mat-card>
+  <br>
+</div>
+
+<button mat-button (click)="generate()" style="margin-top: 30px;margin-left: 60px; margin-bottom: 30px">Generate PDF</button>

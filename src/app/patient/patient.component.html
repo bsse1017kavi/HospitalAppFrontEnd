@@ -1,0 +1,98 @@
+<h1 style="margin-left: 60px; margin-top: 30px">Patient Component</h1>
+<br>
+
+<div *ngFor="let patient of patients">
+  <mat-card style="margin-right: 60px; margin-left:60px;">
+      <div>
+          <div class="row">
+              <div class="col-sm-11" style="float:left">
+                  <div >
+                      <p> Id: {{patient.id}} </p>
+                      <p> Name: {{patient.name}} </p>
+                      <p> Age: {{patient.age}} </p>
+                      <p> Diagnosis: {{patient.diagnosis}} </p>
+                  </div>
+        
+              </div>
+
+              <div class="col-sm-1">
+                <button mat-button (click)="editPatient(patient)" > Edit </button>
+                <button mat-button style="margin-top: 10px" (click)="deletePatient(patient.id)"> Delete </button>
+                <button mat-button style="margin-top: 10px" (click)="viewPrescription(patient)"> Prescription </button>
+              </div>
+              
+          </div>
+    
+      </div>
+  </mat-card>
+  <br>
+</div>
+
+<!-- <div *ngFor="let prescription of prescriptions">
+    <mat-card style="margin-right: 60px; margin-left:60px;">
+        <div>
+            <div class="row">
+                <div class="col-sm-11" style="float:left">
+                    <div >
+                        <p> Id: {{prescription.patient.id}} </p>
+                        <p> Name: {{prescription.patient.name}} </p>
+                        <p> Age: {{prescription.patient.age}} </p>
+                        <p> Diagnosis: {{prescription.patient.diagnosis}} </p>
+                        <p> <b>Medicines:</b> </p>
+                        <div *ngFor="let medicine of prescription.medicines">
+                          {{prescription.medicine.name}}, 
+                        </div>
+                        
+                        <div *ngFor="let medicine of medicines">
+                            {{medicine.name}}, {{medicine.usage}}
+                        </div>
+                    </div>
+          
+                </div>
+  
+                <div class="col-sm-1">
+                  <button mat-button (click)="editPatient(prescription.patient)" > Edit </button>
+                  <button mat-button style="margin-top: 10px" (click)="deletePatient(prescription.patient.id)"> Delete </button>
+                </div>
+                
+            </div>
+      
+        </div>
+    </mat-card>
+    <br>
+  </div>
+
+<br> -->
+
+<mat-card style="margin-left: 240px; margin-right: 240px">
+    <div class="row">
+        <div class="col-sm-4 offset-sm-4">
+            <form class="form" [formGroup]="patientService.formModel" autocomplete="off" (submit)="addPatient()">
+                <div class="form-group required">
+                    <label>Patient Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="patient.name" formControlName="PatientName">
+                </div>
+    
+                <div>
+                    <div class="form-group required">
+                        <label>Age</label>
+                        <input type="number" class="form-control" [(ngModel)]="patient.age" formControlName="Age">
+                    </div>
+                    <div class="form-group required">
+                        <label>Diagnosis</label>
+                        <input type="text" class="form-control" [(ngModel)]="patient.diagnosis" formControlName="Diagnosis">
+                    </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="form-group col-md-6 offset-md-3">
+                        <button type="submit" class="btn btn-lg btn-block" >Add Patient</button>
+                        <br>
+                    </div>
+                    
+                </div>
+
+            </form>
+        </div>
+    </div>
+</mat-card>

@@ -1,0 +1,37 @@
+<h1>Doctor Component</h1>
+
+<div *ngFor="let doctor of doctors">
+  <mat-card>
+      <div>
+          <div class="row">
+              <div class="col-sm-11" style="float:left">
+                  <div >
+                      <p> Id: {{doctor.id}} </p>
+                      <p> Name: {{doctor.name}} </p>
+                  </div>
+        
+              </div>
+
+              <div class="col-sm-1" style="float:right">
+                      
+                  <button mat-icon-button class="more" (click)="mySelect.toggle()"><mat-icon>more_vert</mat-icon></button>
+                  <div style="width:120px; float:right; margin-right:150px;">
+                      <mat-select #mySelect> 
+                          <mat-option (click)="editStudentInfo(doctor)">
+                              Edit Info
+                          </mat-option>
+                          <mat-option (click)="deleteAccount(doctor)">
+                              Delete
+                          </mat-option>
+                
+                      </mat-select>
+                  </div>
+                        
+              </div>
+              
+          </div>
+    
+      </div>
+  </mat-card>
+  <br>
+</div>

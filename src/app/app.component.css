@@ -1,0 +1,14 @@
+.more-div{
+    /* position: relative; */
+}
+
+.more{
+    /* position: absolute; */
+    /* top: -7px; */
+}
+
+::ng-deep .mat-select-arrow { 
+    opacity: 0%; 
+    width: 0px;
+    position: absolute;
+}

@@ -1,0 +1,68 @@
+<h1 style="margin-left: 60px; margin-top: 30px">Medicine Component</h1>
+<br>
+
+<div *ngFor="let medicine of medicines">
+  <mat-card style="margin-right: 60px; margin-left:60px;">
+      <div>
+          <div class="row">
+              <div class="col-sm-11" style="float:left">
+                  <div >
+                      <p> Id: {{medicine.id}} </p>
+                      <p> Name: {{medicine.name}} </p>
+                      <p> Indication: {{medicine.indication}} </p>
+                      <p> Usage: {{medicine.usage}} </p>
+                      <p> Instruction: {{medicine.instruction}} </p>
+                  </div>
+        
+              </div>
+
+              <div class="col-sm-1">
+                <button mat-button (click)="editMedicine(medicine)" > Edit </button>
+                <button mat-button style="margin-top: 10px" (click)="deleteMedicine(medicine.id)"> Delete </button>
+              </div>
+              
+          </div>
+    
+      </div>
+  </mat-card>
+  <br>
+</div>
+
+<br>
+
+<mat-card style="margin-left: 240px; margin-right: 240px">
+    <div class="row">
+        <div class="col-sm-4 offset-sm-4">
+            <form class="form" [formGroup]="medicineService.formModel" autocomplete="off" (submit)="addMedicine()">
+                <div class="form-group required">
+                    <label>Medicine Name</label>
+                    <input type="text" class="form-control" [(ngModel)]="medicine.name" formControlName="MedicineName">
+                </div>
+    
+                <div>
+                    <div class="form-group required">
+                        <label>Indication</label>
+                        <input type="text" class="form-control" [(ngModel)]="medicine.indication" formControlName="Indication">
+                    </div>
+                    <div class="form-group required">
+                        <label>Usage</label>
+                        <input type="text" class="form-control" [(ngModel)]="medicine.usage" formControlName="Usage">
+                    </div>
+                    <div class="form-group required">
+                      <label>Instruction</label>
+                      <input type="text" class="form-control" [(ngModel)]="medicine.instruction" formControlName="Instruction">
+                  </div>
+                </div>
+                <br>
+                <div class="form-row">
+                    <div class="form-group col-md-6 offset-md-3">
+                        <button type="submit" class="btn btn-lg btn-block" >Add Medicine</button>
+                        <br>
+                    </div>
+                    
+                </div>
+
+            </form>
+        </div>
+    </div>
+</mat-card>

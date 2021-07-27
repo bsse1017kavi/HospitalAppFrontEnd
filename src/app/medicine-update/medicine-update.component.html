@@ -1,0 +1,38 @@
+<mat-card style="margin-left: 240px; margin-right: 240px">
+  <div class="row">
+      <div class="col-sm-4 offset-sm-4">
+          <form class="form" [formGroup]="medicineService.formModel" autocomplete="off" (submit)="updateMedicine()">
+              <div class="form-group required">
+                  <label>Medicine Id: {{medicineService.medicineForUpdate.id}}</label>
+                  <br>
+                  <label>Medicine Name</label>
+                  <input type="text" class="form-control" [(ngModel)]="medicineService.medicineForUpdate.name" formControlName="MedicineName" value="medicineService.medicineForUpdate.name">
+              </div>
+  
+              <div>
+                  <div class="form-group required">
+                      <label>Indication</label>
+                      <input type="text" class="form-control" [(ngModel)]="medicineService.medicineForUpdate.indication" formControlName="Indication" value="medicineService.medicineForUpdate.indication">
+                  </div>
+                  <div class="form-group required">
+                      <label>Usage</label>
+                      <input type="text" class="form-control" [(ngModel)]="medicineService.medicineForUpdate.usage" formControlName="Usage" value="medicineService.medicineForUpdate.usage">
+                  </div>
+                  <div class="form-group required">
+                    <label>Instruction</label>
+                    <input type="text" class="form-control" [(ngModel)]="medicineService.medicineForUpdate.instruction" formControlName="Instruction" value="medicineService.medicineForUpdate.instruction">
+                </div>
+              </div>
+              <br>
+              <div class="form-row">
+                  <div class="form-group col-md-6 offset-md-3">
+                      <button type="submit" class="btn btn-lg btn-block" >Update Medicine</button>
+                      <br>
+                  </div>
+                  
+              </div>
+
+          </form>
+      </div>
+  </div>
+</mat-card>
