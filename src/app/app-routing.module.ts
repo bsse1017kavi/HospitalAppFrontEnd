@@ -13,6 +13,7 @@ import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = 
 [
+    {path:'', redirectTo: '/home', pathMatch: 'full'},
     {path: 'doctor', component:DoctorComponent},
     {path: 'registration', component:RegistrationComponent},
     {path: 'log-in', component:LogInComponent},
