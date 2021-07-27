@@ -120,7 +120,9 @@ export class PrescriptionComponent implements OnInit {
 
     console.log(doctorName);
 
-    var content = "Dr. " + doctorName + "\t\t\t\t\t\t\t\t\t" +  date.getDate() + "/" + date.getMonth() + "/" + date.getUTCFullYear() + "\n\n";
+    var content = "Dr. " + doctorName + "\t\t\t\t\t\t\t\t\t" +  date.getDate() + "/" + date.getMonth() + "/" + date.getUTCFullYear() + "\n";
+
+    content = content + "M.B.B.S,\nDhaka Medical College\n\n";
 
     content = content + "Patient Id: " + this.patient.id  + "\n" + 
       "Name: " + this.patient.name + "\n" + 

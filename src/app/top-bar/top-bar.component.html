@@ -3,14 +3,15 @@
 </p> -->
 
 <mat-toolbar class="mat-elevation-z6">
+  <img src="/assets/hospital_logo.jpg" alt="" height=50>
   <span>
-      Hospital Management 
+      <b style="font-size: 20px"> Hospital Management </b>
   </span>
 
   <div class="spacer"></div>
 
   <nav>
-    <a mat-button routerLink='/' >Home</a>
+    <a mat-button routerLink='/home' >Home</a>
     <!-- <a mat-button routerLink='/doctor' >Doctor</a> -->
     <a mat-button routerLink='/registration' *ngIf="!check()">Sign Up</a>
     <a mat-button routerLink='/log-in' *ngIf="!check()">Log In</a>

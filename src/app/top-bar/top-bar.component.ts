@@ -33,7 +33,7 @@ export class TopBarComponent implements OnInit, OnDestroy {
 
     localStorage.removeItem("doctorName");
 
-    this.router.navigate(["/"]) ;
+    this.router.navigate(["/home"]) ;
       
   }
 

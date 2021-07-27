@@ -28,6 +28,7 @@ import { MedicineComponent } from './medicine/medicine.component';
 import { MedicineService } from './medicine.service';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { MedicineUpdateComponent } from './medicine-update/medicine-update.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 export function tokenGetter()
 {
@@ -47,7 +48,8 @@ export function tokenGetter()
     PatientUpdateComponent,
     MedicineComponent,
     PrescriptionComponent,
-    MedicineUpdateComponent
+    MedicineUpdateComponent,
+    HomepageComponent
   ],
   imports: [
     BrowserModule,

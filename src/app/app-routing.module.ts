@@ -9,6 +9,7 @@ import { PatientUpdateComponent } from './patient-update/patient-update.componen
 import { MedicineComponent } from './medicine/medicine.component';
 import { PrescriptionComponent } from './prescription/prescription.component';
 import { MedicineUpdateComponent } from './medicine-update/medicine-update.component';
+import { HomepageComponent } from './homepage/homepage.component';
 
 const routes: Routes = 
 [
@@ -19,7 +20,8 @@ const routes: Routes =
     {path: 'patient-update', component:PatientUpdateComponent, canActivate: [AuthGuardService]},
     {path: 'medicine', component:MedicineComponent, canActivate: [AuthGuardService]},
     {path: 'prescription', component:PrescriptionComponent, canActivate: [AuthGuardService]},
-    {path: 'medicine-update', component:MedicineUpdateComponent, canActivate: [AuthGuardService]}
+    {path: 'medicine-update', component:MedicineUpdateComponent, canActivate: [AuthGuardService]},
+    {path: 'home', component:HomepageComponent}
 ];
 
 @NgModule
@@ -32,4 +34,5 @@ const routes: Routes =
 
 export class AppRoutingModule {}
 export const routingComponents = [DoctorComponent, RegistrationComponent,
-     LogInComponent, PatientComponent, PatientUpdateComponent, MedicineComponent, PrescriptionComponent]
+     LogInComponent, PatientComponent, PatientUpdateComponent, MedicineComponent, PrescriptionComponent,
+    MedicineUpdateComponent, HomepageComponent]
