@@ -139,11 +139,16 @@ export class PrescriptionComponent implements OnInit {
   public generate()  
   {   
 
+    var img = new Image()
+    img.src = '/assets/prescription_logo.jpg'
+
     var content = this.getString();
 
     var doc = new jspdf.jsPDF();
 
-    doc.text(content , 20, 20);
+    doc.addImage(img, 'jpg' , 0, 0, 210, 37.5);
+
+    doc.text(content , 20, 50);
 
     doc.save("Prescription.pdf");
 
