@@ -129,7 +129,15 @@ export class PrescriptionComponent implements OnInit {
       "Age: " + this.patient.age + "\n\n" + "Medcines:\n";
 
     this.medicines.forEach(medicine=>{
-      content = content + medicine.name + ", " + medicine.usage + "\n";
+      content = content + medicine.name + ", " + medicine.usage;
+
+      if(medicine.instruction!="Nil")
+      {
+        content = content + ", " + medicine.instruction;
+      }
+
+      content = content + "\n";
+
     })
 
     return content;

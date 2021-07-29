@@ -26,7 +26,7 @@ export class RegistrationComponent implements OnInit {
       (response: any) =>
       {
         this.service.formModel.reset();
-        this.router.navigate(["/doctor"]);
+        this.router.navigate(["/home"]);
         this.doctor = new Doctor();
       }
     )
